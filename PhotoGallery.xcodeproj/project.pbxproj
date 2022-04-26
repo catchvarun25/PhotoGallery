@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B9DC5FE028167A0700CFE05E /* PhotoGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FDF28167A0700CFE05E /* PhotoGalleryApp.swift */; };
-		B9DC5FE228167A0700CFE05E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FE128167A0700CFE05E /* ContentView.swift */; };
+		B9DC5FE228167A0700CFE05E /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FE128167A0700CFE05E /* PhotoListView.swift */; };
 		B9DC5FE428167A1100CFE05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DC5FE328167A1100CFE05E /* Assets.xcassets */; };
 		B9DC5FE728167A1100CFE05E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DC5FE628167A1100CFE05E /* Preview Assets.xcassets */; };
 		B9DC5FF128167A1100CFE05E /* PhotoGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FF028167A1100CFE05E /* PhotoGalleryTests.swift */; };
 		B9DC5FFB28167A1100CFE05E /* PhotoGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FFA28167A1100CFE05E /* PhotoGalleryUITests.swift */; };
 		B9DC5FFD28167A1100CFE05E /* PhotoGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FFC28167A1100CFE05E /* PhotoGalleryUITestsLaunchTests.swift */; };
+		B9DC60132817C4CA00CFE05E /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC60122817C4CA00CFE05E /* PhotoListViewModel.swift */; };
+		B9DC60152817C50700CFE05E /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC60142817C50700CFE05E /* PhotoDetailsView.swift */; };
+		B9DC60172817C52D00CFE05E /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC60162817C52D00CFE05E /* PhotoDetailsViewModel.swift */; };
+		B9DC60192817C65700CFE05E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC60182817C65700CFE05E /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		B9DC5FDC28167A0700CFE05E /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DC5FDF28167A0700CFE05E /* PhotoGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryApp.swift; sourceTree = "<group>"; };
-		B9DC5FE128167A0700CFE05E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B9DC5FE128167A0700CFE05E /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 		B9DC5FE328167A1100CFE05E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DC5FE628167A1100CFE05E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9DC5FEC28167A1100CFE05E /* PhotoGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,12 @@
 		B9DC5FF628167A1100CFE05E /* PhotoGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DC5FFA28167A1100CFE05E /* PhotoGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryUITests.swift; sourceTree = "<group>"; };
 		B9DC5FFC28167A1100CFE05E /* PhotoGalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9DC60122817C4CA00CFE05E /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		B9DC60142817C50700CFE05E /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
+		B9DC60162817C52D00CFE05E /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		B9DC60182817C65700CFE05E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B9DC601A2817C77100CFE05E /* UAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UAT.xcconfig; sourceTree = "<group>"; };
+		B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RELEASE.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,12 @@
 		B9DC5FDE28167A0700CFE05E /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				B9DC600F2817B55C00CFE05E /* Config */,
+				B9DC600E2817B53400CFE05E /* Constants */,
+				B9DC600D2817B35600CFE05E /* Extensions */,
+				B9DC600A2817B30C00CFE05E /* Modules */,
+				B9DC60092817B2F000CFE05E /* APIManager */,
 				B9DC5FDF28167A0700CFE05E /* PhotoGalleryApp.swift */,
-				B9DC5FE128167A0700CFE05E /* ContentView.swift */,
 				B9DC5FE328167A1100CFE05E /* Assets.xcassets */,
 				B9DC5FE528167A1100CFE05E /* Preview Content */,
 			);
@@ -125,6 +139,64 @@
 				B9DC5FFC28167A1100CFE05E /* PhotoGalleryUITestsLaunchTests.swift */,
 			);
 			path = PhotoGalleryUITests;
+			sourceTree = "<group>";
+		};
+		B9DC60092817B2F000CFE05E /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		B9DC600A2817B30C00CFE05E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC600C2817B34600CFE05E /* PhotoDetails */,
+				B9DC600B2817B31800CFE05E /* PhotoList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B9DC600B2817B31800CFE05E /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC5FE128167A0700CFE05E /* PhotoListView.swift */,
+				B9DC60122817C4CA00CFE05E /* PhotoListViewModel.swift */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		B9DC600C2817B34600CFE05E /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC60142817C50700CFE05E /* PhotoDetailsView.swift */,
+				B9DC60162817C52D00CFE05E /* PhotoDetailsViewModel.swift */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
+		B9DC600D2817B35600CFE05E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9DC600E2817B53400CFE05E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC60182817C65700CFE05E /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B9DC600F2817B55C00CFE05E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B9DC601A2817C77100CFE05E /* UAT.xcconfig */,
+				B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9DC5FE228167A0700CFE05E /* ContentView.swift in Sources */,
+				B9DC60152817C50700CFE05E /* PhotoDetailsView.swift in Sources */,
+				B9DC60192817C65700CFE05E /* AppConstants.swift in Sources */,
+				B9DC60172817C52D00CFE05E /* PhotoDetailsViewModel.swift in Sources */,
+				B9DC5FE228167A0700CFE05E /* PhotoListView.swift in Sources */,
+				B9DC60132817C4CA00CFE05E /* PhotoListViewModel.swift in Sources */,
 				B9DC5FE028167A0700CFE05E /* PhotoGalleryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +373,7 @@
 /* Begin XCBuildConfiguration section */
 		B9DC5FFE28167A1100CFE05E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601A2817C77100CFE05E /* UAT.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -358,6 +435,7 @@
 		};
 		B9DC5FFF28167A1100CFE05E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -413,6 +491,7 @@
 		};
 		B9DC600128167A1100CFE05E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601A2817C77100CFE05E /* UAT.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,6 +521,7 @@
 		};
 		B9DC600228167A1100CFE05E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +551,7 @@
 		};
 		B9DC600428167A1100CFE05E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601A2817C77100CFE05E /* UAT.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +577,7 @@
 		};
 		B9DC600528167A1100CFE05E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,6 +603,7 @@
 		};
 		B9DC600728167A1100CFE05E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601A2817C77100CFE05E /* UAT.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +627,7 @@
 		};
 		B9DC600828167A1100CFE05E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
