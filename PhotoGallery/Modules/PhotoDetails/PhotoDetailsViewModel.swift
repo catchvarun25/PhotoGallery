@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct PhotoResponse  {
+    var imageData: Data
+}

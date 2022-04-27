@@ -8,4 +8,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-UNSPLASH_ENDPOINT = https:/$()/api.unsplash.com/photos/?client_id=
+UNSPLASH_HOST = api.unsplash.com
+UNSPLASH_CLIENT_ID = Va__IVNAmedqor87dcHFI7zueN7sQjneJD4gRatfN5M

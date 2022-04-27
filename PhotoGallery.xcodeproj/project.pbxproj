@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9A3DBE12817D28100ACAFDE /* PhotoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBE02817D28100ACAFDE /* PhotoListModel.swift */; };
+		B9A3DBE32818188700ACAFDE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBE22818188700ACAFDE /* JSONParser.swift */; };
+		B9A3DBE528181A6200ACAFDE /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBE428181A6200ACAFDE /* PhotosAPI.swift */; };
+		B9A3DBE928181E6C00ACAFDE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBE828181E6C00ACAFDE /* APIError.swift */; };
+		B9A3DBEE28193BC300ACAFDE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBED28193BC300ACAFDE /* Configuration.swift */; };
+		B9A3DBF02819755600ACAFDE /* FetchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBEF2819755600ACAFDE /* FetchAPI.swift */; };
+		B9A3DBF228199CD200ACAFDE /* DownloadAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3DBF128199CD200ACAFDE /* DownloadAPI.swift */; };
 		B9DC5FE028167A0700CFE05E /* PhotoGalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FDF28167A0700CFE05E /* PhotoGalleryApp.swift */; };
 		B9DC5FE228167A0700CFE05E /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5FE128167A0700CFE05E /* PhotoListView.swift */; };
 		B9DC5FE428167A1100CFE05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DC5FE328167A1100CFE05E /* Assets.xcassets */; };
@@ -38,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9A3DBE02817D28100ACAFDE /* PhotoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListModel.swift; sourceTree = "<group>"; };
+		B9A3DBE22818188700ACAFDE /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		B9A3DBE428181A6200ACAFDE /* PhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
+		B9A3DBE828181E6C00ACAFDE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B9A3DBEC281935AE00ACAFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B9A3DBED28193BC300ACAFDE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		B9A3DBEF2819755600ACAFDE /* FetchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAPI.swift; sourceTree = "<group>"; };
+		B9A3DBF128199CD200ACAFDE /* DownloadAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAPI.swift; sourceTree = "<group>"; };
 		B9DC5FDC28167A0700CFE05E /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DC5FDF28167A0700CFE05E /* PhotoGalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryApp.swift; sourceTree = "<group>"; };
 		B9DC5FE128167A0700CFE05E /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
@@ -104,6 +119,7 @@
 		B9DC5FDE28167A0700CFE05E /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				B9A3DBEC281935AE00ACAFDE /* Info.plist */,
 				B9DC600F2817B55C00CFE05E /* Config */,
 				B9DC600E2817B53400CFE05E /* Constants */,
 				B9DC600D2817B35600CFE05E /* Extensions */,
@@ -144,6 +160,11 @@
 		B9DC60092817B2F000CFE05E /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				B9A3DBE22818188700ACAFDE /* JSONParser.swift */,
+				B9A3DBE428181A6200ACAFDE /* PhotosAPI.swift */,
+				B9A3DBE828181E6C00ACAFDE /* APIError.swift */,
+				B9A3DBEF2819755600ACAFDE /* FetchAPI.swift */,
+				B9A3DBF128199CD200ACAFDE /* DownloadAPI.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -162,6 +183,7 @@
 			children = (
 				B9DC5FE128167A0700CFE05E /* PhotoListView.swift */,
 				B9DC60122817C4CA00CFE05E /* PhotoListViewModel.swift */,
+				B9A3DBE02817D28100ACAFDE /* PhotoListModel.swift */,
 			);
 			path = PhotoList;
 			sourceTree = "<group>";
@@ -195,6 +217,7 @@
 			children = (
 				B9DC601A2817C77100CFE05E /* UAT.xcconfig */,
 				B9DC601B2817C79300CFE05E /* RELEASE.xcconfig */,
+				B9A3DBED28193BC300ACAFDE /* Configuration.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -330,11 +353,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DC60152817C50700CFE05E /* PhotoDetailsView.swift in Sources */,
+				B9A3DBF228199CD200ACAFDE /* DownloadAPI.swift in Sources */,
+				B9A3DBE12817D28100ACAFDE /* PhotoListModel.swift in Sources */,
+				B9A3DBE928181E6C00ACAFDE /* APIError.swift in Sources */,
 				B9DC60192817C65700CFE05E /* AppConstants.swift in Sources */,
+				B9A3DBE528181A6200ACAFDE /* PhotosAPI.swift in Sources */,
 				B9DC60172817C52D00CFE05E /* PhotoDetailsViewModel.swift in Sources */,
+				B9A3DBE32818188700ACAFDE /* JSONParser.swift in Sources */,
 				B9DC5FE228167A0700CFE05E /* PhotoListView.swift in Sources */,
 				B9DC60132817C4CA00CFE05E /* PhotoListViewModel.swift in Sources */,
+				B9A3DBF02819755600ACAFDE /* FetchAPI.swift in Sources */,
 				B9DC5FE028167A0700CFE05E /* PhotoGalleryApp.swift in Sources */,
+				B9A3DBEE28193BC300ACAFDE /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +531,7 @@
 				DEVELOPMENT_TEAM = HHQGS97XH4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,6 +562,7 @@
 				DEVELOPMENT_TEAM = HHQGS97XH4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

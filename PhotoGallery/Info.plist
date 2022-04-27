@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UNSPLASH_CLIENT_ID</key>
+	<string>$(UNSPLASH_CLIENT_ID)</string>
+	<key>UNSPLASH_HOST</key>
+	<string>$(UNSPLASH_HOST)</string>
+</dict>
+</plist>
