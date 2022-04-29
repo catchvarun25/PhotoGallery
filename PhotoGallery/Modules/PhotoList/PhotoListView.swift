@@ -7,20 +7,40 @@
 
 import SwiftUI
 
-struct PhotoListView: View {
+struct PhotoListView <Model>: View where Model:PhotosListViewModelInterface {
+    @ObservedObject private var viewModel: Model
+    init(viewModel: Model) {
+      self.viewModel = viewModel
+    }
+    var columns: [GridItem] = [
+        GridItem(.flexible(minimum: 100.0, maximum: UIScreen.main.bounds.size.width / 3.0 )),
+        GridItem(.flexible(minimum: 100.0, maximum: UIScreen.main.bounds.size.width / 3.0)),
+        GridItem(.flexible(minimum: 100.0, maximum: UIScreen.main.bounds.size.width / 3.0))
+    ]
+    let height: CGFloat = 150
+    
     var body: some View {
         NavigationView {
-          Text("Photo List View")
-         .navigationBarTitle(AppConstants.PageTitle.PhotoListView)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach($viewModel.photoList) { photo in
+                        let _ = print("PhotoID: \(photo.id)")
+                        PhotoCard(title: "\(photo.id)")
+                            .frame(height: height)
+                    }
+                }
+                .padding()
+            }
+            .navigationBarTitle(AppConstants.PageTitle.PhotoListView)
         }
         .onAppear {
-            
+            viewModel.fetchPhotoList()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoListView()
+        PhotoListView(viewModel: MockPhotoListViewModel(photosFetcher: PhotosAPI()))
     }
 }

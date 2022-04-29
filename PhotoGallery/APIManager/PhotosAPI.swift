@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol PhotosFetchable {
-    func fetchPhotosList() -> AnyPublisher<Photos.List.Response, APIError>
+    func fetchPhotosList() -> AnyPublisher<[PhotoModel], APIError>
     func downloadPhoto() -> AnyPublisher<Data,APIError>
 }
 
@@ -55,7 +55,7 @@ private extension PhotosAPI {
 
 
 extension PhotosAPI: PhotosFetchable, Fetchable, Downloadable {
-    func fetchPhotosList() -> AnyPublisher<Photos.List.Response, APIError> {
+    func fetchPhotosList() -> AnyPublisher<[PhotoModel], APIError> {
         return fetch(with: self.urlComponentForPhotosList(), session: self.session)
     }
     

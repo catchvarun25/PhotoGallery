@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct PhotoGalleryApp: App {
+    let viewModel = PhotoListViewModel(photosFetcher: PhotosAPI())
     var body: some Scene {
         WindowGroup {
-            PhotoListView()
+            PhotoListView(viewModel: viewModel)
         }
     }
 }
