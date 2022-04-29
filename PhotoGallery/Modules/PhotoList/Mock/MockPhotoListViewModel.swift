@@ -51,7 +51,7 @@ class MockPhotoListViewModel: PhotosListViewModelInterface {
                     bio: "Tezos is a self-upgradable and energy-efficient Proof of Stake blockchain with a proven record of security and scalability. Tezos seamlessly adopts innovations without disruption. For more information, please visit tezos.com."))
         ]
     }
-    func fetchPhotoList() {
-        
-    }
+    func fetchPhotoList() {}
+    func downloadPhoto(_ url: String) {}
+
 }

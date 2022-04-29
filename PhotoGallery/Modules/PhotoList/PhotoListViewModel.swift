@@ -12,6 +12,7 @@ protocol PhotosListViewModelInterface: ObservableObject {
     var photoList: [PhotoModel] { get set }
     init(photosFetcher: PhotosFetchable)
     func fetchPhotoList()
+    func downloadPhoto(_ url: String)
 }
 
 class PhotoListViewModel: PhotosListViewModelInterface {
@@ -39,7 +40,11 @@ class PhotoListViewModel: PhotosListViewModelInterface {
                 self?.photoList = photosResponse
             }
             .store(in: &disposables)
-
     }
+    
+    func downloadPhoto(_ url: String) {
+        
+    }
+    
 }
 

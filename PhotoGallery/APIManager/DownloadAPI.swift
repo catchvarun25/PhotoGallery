@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 protocol Downloadable {
-    func downloadData(with urlComponent: URLComponents, session: URLSession) -> AnyPublisher<Data,APIError>
+    func downloadData(with urlComponent: URLComponents?, session: URLSession) -> AnyPublisher<Data,APIError>
 }
 
 extension Downloadable {
-    func downloadData(with urlComponent: URLComponents, session: URLSession) -> AnyPublisher<Data,APIError> {
-        guard let url = urlComponent.url else {
+    func downloadData(with urlComponent: URLComponents?, session: URLSession) -> AnyPublisher<Data,APIError> {
+        guard let url = urlComponent?.url else {
             return Fail(error: APIError.request(message: "Invalid URL")).eraseToAnyPublisher()
         }
         

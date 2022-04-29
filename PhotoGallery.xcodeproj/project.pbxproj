@@ -112,6 +112,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B94D451A281BB2A000976386 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B9C3C21A281AA5E8004246FE /* MockPhotoListViewModel.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		B9DC5FD328167A0700CFE05E = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +206,10 @@
 		B9DC600B2817B31800CFE05E /* PhotoList */ = {
 			isa = PBXGroup;
 			children = (
+				B94D451A281BB2A000976386 /* Mock */,
 				B9C3C218281A94FE004246FE /* PhotoCard.swift */,
 				B9DC5FE128167A0700CFE05E /* PhotoListView.swift */,
 				B9DC60122817C4CA00CFE05E /* PhotoListViewModel.swift */,
-				B9C3C21A281AA5E8004246FE /* MockPhotoListViewModel.swift */,
 				B9A3DBE02817D28100ACAFDE /* PhotoListModel.swift */,
 			);
 			path = PhotoList;

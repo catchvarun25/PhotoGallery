@@ -9,13 +9,23 @@ import Foundation
 import SwiftUI
 
 struct PhotoCard: View {
-    let title: String
+    @Binding var title: String
+    @Binding var imageURL: String
+    
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 12).foregroundColor(.red)
             Text(title)
                 .photoHeaderStyle()
+        }.onAppear {
+            //viewModel.downloadPhoto(imageURL)
         }
         
     }
 }
+
+struct PhotoCard_Previews: PreviewProvider {
+    static var previews: some View {
+        PhotoCard(title: .constant("Varun"), imageURL: .constant("https://"))
+    }
+}
+

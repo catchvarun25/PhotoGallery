@@ -10,7 +10,7 @@ import Combine
 
 protocol PhotosFetchable {
     func fetchPhotosList() -> AnyPublisher<[PhotoModel], APIError>
-    func downloadPhoto() -> AnyPublisher<Data,APIError>
+    func downloadPhoto(_ url: String) -> AnyPublisher<Data,APIError>
 }
 
 class PhotosAPI {
@@ -40,11 +40,10 @@ private extension PhotosAPI {
         return components
     }
     
-    func urlComponentToDownloadPhoto() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = PhotosAPIComponent.scheme
-        components.host = PhotosAPIComponent.host
-        components.path = PhotosAPIComponent.path
+    func urlComponentToDownloadPhoto(_ url: String) throws -> URLComponents {
+        guard var components = URLComponents(string: url) else {
+            throw APIError.request(message: "Invalid URL")
+        }
         components.queryItems = [
           URLQueryItem(name: "w", value: "750" ),
           URLQueryItem(name: "dpr", value: "2" ),
@@ -59,8 +58,8 @@ extension PhotosAPI: PhotosFetchable, Fetchable, Downloadable {
         return fetch(with: self.urlComponentForPhotosList(), session: self.session)
     }
     
-    func downloadPhoto() -> AnyPublisher<Data, APIError> {
-        return downloadData(with: self.urlComponentToDownloadPhoto(), session: self.session)
+    func downloadPhoto(_ url: String) -> AnyPublisher<Data, APIError> {
+        return downloadData(with: try? self.urlComponentToDownloadPhoto(url), session: self.session)
     }
 }
 
