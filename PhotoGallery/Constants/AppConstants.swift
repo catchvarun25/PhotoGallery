@@ -10,6 +10,7 @@ import Foundation
 struct AppConstants {
     
     struct PageTitle {
-        static let PhotoListView = "My Collection"
+        static let PhotoListView   = "My Photos"
+        static let PhotoDetailView = "Photo's Detail"
     }
 }

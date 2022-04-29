@@ -25,7 +25,7 @@ struct PhotoListView <Model>: View where Model:PhotosListViewModelInterface {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach($viewModel.photoList) { photo in
                         let _ = print("PhotoID: \(photo.id)")
-                        PhotoCard(title: photo.id, imageURL: photo.urls.small)
+                        PhotoCard(title: photo.id, imageURL: photo.urls.thumb, viewModel: viewModel)
                             .frame(height: height)
                     }
                 }

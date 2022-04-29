@@ -9,6 +9,7 @@ import Foundation
 
 class MockPhotoListViewModel: PhotosListViewModelInterface {
     @Published var photoList: [PhotoModel]
+    @Published var imageList: [String : Data?]
     private let photosFetcher: PhotosFetchable
     required init(photosFetcher: PhotosFetchable) {
         self.photosFetcher = photosFetcher
@@ -50,6 +51,7 @@ class MockPhotoListViewModel: PhotosListViewModelInterface {
                     last_name: nil,
                     bio: "Tezos is a self-upgradable and energy-efficient Proof of Stake blockchain with a proven record of security and scalability. Tezos seamlessly adopts innovations without disruption. For more information, please visit tezos.com."))
         ]
+        self.imageList = [:]
     }
     func fetchPhotoList() {}
     func downloadPhoto(_ url: String) {}
