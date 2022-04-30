@@ -22,11 +22,9 @@ struct PhotoCard<Model>: View where Model: PhotosListViewModelInterface {
     var body: some View {
         VStack {
             Spacer()
-            if viewModel.imageList[imageURL] != nil {
-                Image(uiImage: UIImage(data: (viewModel.imageList[imageURL] ?? Data())!) ?? UIImage())
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            Image(uiImage: (UIImage(data: (viewModel.imageList[imageURL] ?? Data())!) ?? UIImage(named:"img_photo_placeholder"))!)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
             Text(title)
                 .photoHeaderStyle()
         }.onAppear {
@@ -39,7 +37,7 @@ struct PhotoCard<Model>: View where Model: PhotosListViewModelInterface {
 
 struct PhotoCard_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCard(title: "Varun", imageURL: "https://", viewModel: MockPhotoListViewModel(photosFetcher: PhotosAPI()))
+        PhotoCard(title: "Photo Title", imageURL: "https://", viewModel: MockPhotoListViewModel(photosFetcher: PhotosAPI()))
     }
 }
 
