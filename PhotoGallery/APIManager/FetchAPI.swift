@@ -16,7 +16,6 @@ extension Fetchable {
         guard let url = urlComponent.url else {
             return Fail(error: APIError.request(message: "Invalid URL")).eraseToAnyPublisher()
         }
-        debugPrint("REQUEST URL: \(url)")
         return session.dataTaskPublisher(for: URLRequest(url: url))
           .mapError { error in
              APIError.network(message: error.localizedDescription)

@@ -17,7 +17,6 @@ extension Downloadable {
         guard let url = urlComponent?.url else {
             return Fail(error: APIError.request(message: "Invalid URL")).eraseToAnyPublisher()
         }
-        
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .tryMap { response -> Data in
                 guard
