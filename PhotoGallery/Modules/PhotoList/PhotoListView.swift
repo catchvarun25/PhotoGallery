@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct PhotoListView <Model>: View where Model:PhotosListViewModelInterface {
-    @ObservedObject private var viewModel: Model
-    init(viewModel: Model) {
-        self.viewModel = viewModel
+    @StateObject private var viewModel: Model
+    init (viewModel: Model) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
+    
     var columns: [GridItem] = [
         GridItem(.flexible(minimum: 100.0, maximum: UIScreen.main.bounds.size.width / 3.0 )),
         GridItem(.flexible(minimum: 100.0, maximum: UIScreen.main.bounds.size.width / 3.0)),
@@ -23,8 +24,7 @@ struct PhotoListView <Model>: View where Model:PhotosListViewModelInterface {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach($viewModel.photoList) { photo in
-                        let _ = print("PhotoID: \(photo.id)")
+                    ForEach(viewModel.photoList) { photo in
                         PhotoCard(title: photo.id, imageURL: photo.urls.thumb, viewModel: viewModel)
                             .frame(height: height)
                     }

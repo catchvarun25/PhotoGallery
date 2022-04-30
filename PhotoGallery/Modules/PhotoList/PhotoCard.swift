@@ -9,9 +9,16 @@ import Foundation
 import SwiftUI
 
 struct PhotoCard<Model>: View where Model: PhotosListViewModelInterface {
-    @Binding var title: String
-    @Binding var imageURL: String
-    var viewModel: Model
+    private var title: String
+    private var imageURL: String
+    @ObservedObject private var viewModel: Model
+    
+    init(title: String, imageURL: String, viewModel: Model) {
+        self.title = title
+        self.imageURL = imageURL
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -32,7 +39,7 @@ struct PhotoCard<Model>: View where Model: PhotosListViewModelInterface {
 
 struct PhotoCard_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCard(title: .constant("Varun"), imageURL: .constant("https://"), viewModel: MockPhotoListViewModel(photosFetcher: PhotosAPI()))
+        PhotoCard(title: "Varun", imageURL: "https://", viewModel: MockPhotoListViewModel(photosFetcher: PhotosAPI()))
     }
 }
 
