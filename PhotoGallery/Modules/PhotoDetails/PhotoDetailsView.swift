@@ -12,21 +12,23 @@ struct PhotoDetailsView<Model>: View where Model: PhotoDetailsViewModelInterface
     init(viewModel: Model) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
-        NavigationView{
-            VStack(alignment: HorizontalAlignment.center, spacing: 10.0) {
-                ScrollView {
-                    Image(uiImage: (UIImage(data: (viewModel.imageData ?? Data())!) ?? UIImage(named:"img_photo_placeholder"))!)
-                }
-                Divider()
-                Text("User Name").h1TitleStyle()
-                Text("User Bio")
+        VStack(alignment: HorizontalAlignment.center, spacing: 10.0) {
+            ScrollView {
+                Image(uiImage: (UIImage(data: (viewModel.imageData ?? Data())!) ?? UIImage(named:"img_photo_placeholder"))!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
-            .navigationBarTitle(AppConstants.PageTitle.PhotoDetailView)
+            Text((viewModel.photoModel.user?.first_name ?? "") + (viewModel.photoModel.user?.last_name ?? ""))
+                .h1TitleStyle()
+                .shouldHide(viewModel.photoModel.user == nil)
+            Text(viewModel.photoModel.user?.bio ?? "")
         }
+        .padding()
+        .navigationBarTitle(AppConstants.PageTitle.PhotoDetailView)
         .onAppear {
-            //viewModel.downloadPhoto("")
+            viewModel.downloadPhoto()
         }
     }
 }

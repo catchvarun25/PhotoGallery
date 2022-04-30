@@ -10,27 +10,28 @@ import Combine
 
 protocol PhotoDetailsViewModelInterface: ObservableObject {
     var imageData: Data? { get set }
-    func downloadPhoto(_ url: String)
+    var photoModel: PhotoModel { get }
+    func downloadPhoto()
     init(photosFetcher: PhotosFetchable, photo: PhotoModel)
 }
 
 class PhotoDetailsViewModel {
     @Published var imageData: Data?
+    var photoModel: PhotoModel
     private let photosFetcher: PhotosFetchable
-    private let photo: PhotoModel
     private var disposables = Set<AnyCancellable>()
 
     required init(photosFetcher: PhotosFetchable, photo: PhotoModel) {
         self.photosFetcher = photosFetcher
-        self.photo = photo
+        self.photoModel = photo
     }
 }
 
 extension PhotoDetailsViewModel: PhotoDetailsViewModelInterface {
     
-    func downloadPhoto(_ url: String) {
+    func downloadPhoto() {
         photosFetcher
-            .downloadPhoto(url)
+            .downloadPhoto(photoModel.urls.full)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
                 switch value {

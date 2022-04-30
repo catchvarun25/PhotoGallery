@@ -25,8 +25,12 @@ struct PhotoListView <Model>: View where Model:PhotosListViewModelInterface {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.photoList) { photo in
-                        PhotoCard(title: photo.id, imageURL: photo.urls.thumb, viewModel: viewModel)
-                            .frame(height: height)
+                        NavigationLink {
+                            PhotoListRouter.makePhotoDetailsView(photo: photo)
+                        } label: {
+                            PhotoCard(title: photo.id, imageURL: photo.urls.thumb, viewModel: viewModel)
+                                .frame(height: height)
+                        }
                     }
                 }
                 .padding()
